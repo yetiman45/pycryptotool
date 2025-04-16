@@ -6,6 +6,15 @@
   "scripts": {
     "install": "node build-python.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yetiman45/pycryptotool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yetiman45/pycryptotool/issues"
+  },
+  "homepage": "https://github.com/yetiman45/pycryptotool#readme",
+
   "keywords": [
     "aes",
     "encryption",
@@ -16,3 +25,4 @@
   "author": "Dipin Niroula",
   "license": "MIT"
 }
+
