@@ -4,8 +4,7 @@
   "description": "Node.js wrapper for a Python-based AES encryptor",
   "main": "index.js",
   "scripts": {
-    "install": "node build-python.js",
-    "postinstall": "node postinstall.js"
+    "install": "node build-python.js && node postinstall.js"
   },
   "repository": {
     "type": "git",
