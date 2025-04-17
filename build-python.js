@@ -1,7 +1,6 @@
 const { execSync } = require("child_process");
 const path = require("path");
-const fs = require("fs");
-const readline = require("readline");
+const fs = require("fs"); // Required for deleting files
 
 const scriptPath = path.join(__dirname, "py", "encryptor.py");
 
@@ -16,29 +15,17 @@ try {
   execSync(`pyinstaller --onefile ${scriptPath}`, { stdio: "inherit" });
 
   console.log("Python binary built at ./dist/encryptor");
+
+  // Always delete the source file after building
+  fs.unlink(scriptPath, (err) => {
+    if (err) {
+      console.error("Error deleting file:", err);
+    } else {
+      console.log('File "encryptor.py" deleted successfully.');
+    }
+  });
+
 } catch (err) {
   console.error("Build failed:", err.message);
   process.exit(1);
 }
-
-// Prompt to delete the Python source file
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-rl.question('The file "encryptor.py" exists. Do you want to delete it? (y/n): ', (answer) => {
-  if (answer.toLowerCase() === "y") {
-    fs.unlink(scriptPath, (err) => {
-      if (err) {
-        console.error("Error deleting file:", err);
-      } else {
-        console.log('File "encryptor.py" deleted successfully.');
-      }
-      rl.close();
-    });
-  } else {
-    console.log("File not deleted.");
-    rl.close();
-  }
-});
