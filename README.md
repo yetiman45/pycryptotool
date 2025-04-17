@@ -20,17 +20,20 @@ npm install pycryptotool
 ```
 
 ### Optional Source File Cleanup
-After successful compilation, you'll be prompted:
+~~After successful compilation, you'll be prompted:~~
 
 ```bash
-Python binary created.
-Do you want to delete the source file (py/encryptor.py)? (y/n):
+~~Python binary created.~~
+~~Do you want to delete the source file (py/encryptor.py)? (y/n):~~
 ```
 
-- Type y to remove the original Python script.
-- Type n to keep it.
+~~- Type y to remove the original Python script.~~
+~~- Type n to keep it.~~
 
-This setup ensures a clean environment while allowing you to control whether the original Python source is retained.
+~~This setup ensures a clean environment while allowing you to control whether the original Python source is retained.~~
+
+⚠️ Note: This feature is currently disabled and will be resolved soon.
+As a temporary solution, the Python source file (py/encryptor.py) is always deleted automatically after building the binary.
 
 
 ## 🧪 Usage
