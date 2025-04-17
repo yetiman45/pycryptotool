@@ -1,6 +1,6 @@
 {
   "name": "pycryptotool",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Node.js wrapper for a Python-based AES encryptor",
   "main": "index.js",
   "scripts": {
