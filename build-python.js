@@ -16,15 +16,6 @@ try {
 
   console.log("Python binary built at ./dist/encryptor");
 
-  // Always delete the source file after building
-  fs.unlink(scriptPath, (err) => {
-    if (err) {
-      console.error("Error deleting file:", err);
-    } else {
-      console.log('File "encryptor.py" deleted successfully.');
-    }
-  });
-
 } catch (err) {
   console.error("Build failed:", err.message);
   process.exit(1);

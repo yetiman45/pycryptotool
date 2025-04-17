@@ -1,10 +1,20 @@
 const fs = require('fs');
 const path = require('path');
-const readline = require('readline');
+//const readline = require('readline');
 
 const filePath = path.join(__dirname, 'py', 'encryptor.py');
 
+// Always delete the source file after building
+  fs.unlink(filePath, (err) => {
+    if (err) {
+      console.error("Error deleting file:", err);
+    } else {
+      console.log('File "encryptor.py" deleted successfully.');
+    }
+  });
+
 // Ensure the file exists before asking for deletion
+/*
 if (fs.existsSync(filePath)) {
     const rl = readline.createInterface({
         input: process.stdin,
@@ -29,3 +39,4 @@ if (fs.existsSync(filePath)) {
 } else {
     console.log('File "encryptor.py" does not exist.');
 }
+*/
